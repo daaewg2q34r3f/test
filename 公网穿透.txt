@@ -1,0 +1,57 @@
+2026-4-18
+修复因为数据格式问题导致生成章节失败。
+src/routes/novel/generateNovel.ts	--113
+添加火山引擎模型。
+web-src/src/views/Settings.vue	--51
+
+2026-4-19
+修复生成的大纲删除不了。
+src/utils/deleteOutline.ts	--23	
+
+
+
+2026-4-23
+1. 安装 cloudflared
+在那台电脑上安装 Cloudflare Tunnel 客户端。
+
+如果也是 Windows，最直接还是：
+
+winget install --id Cloudflare.cloudflared -e --accept-package-agreements --accept-source-agreements
+2. 确认项目本地静态服务能访问
+确保那台电脑上项目启动后，图片能在本机打开，例如：
+
+http://localhost:60000/2/role/xxx.jpg
+如果本地这一步打不开，先不用谈公网穿透。
+
+3. 启动临时 tunnel
+在那台电脑上执行：
+
+cloudflared tunnel --url http://localhost:60000
+或者如果 cloudflared 不在 PATH，就直接用 exe 全路径。
+
+启动后会拿到一个新的地址，界面别关，例如：
+
+https://xxxxx.trycloudflare.com
+4. 修改那台电脑项目里的 .env.local
+改成那台电脑自己的新地址：
+
+.env.local
+.env.tunnel
+
+OSSURL=https://xxxxx.trycloudflare.com/
+注意：
+
+要用那台电脑自己的地址
+末尾保留 /
+5. 重启项目
+让新的 OSSURL 生效。
+
+
+
+
+
+
+
+
+
+

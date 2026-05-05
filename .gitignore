@@ -1,0 +1,55 @@
+# dependencies (bun install)
+node_modules
+web-src/node_modules
+
+# output
+out
+dist
+build
+build/*
+scripts/web
+scripts/web/*
+web-src/dist
+web-src/dist/*
+*.tgz
+
+# code coverage
+coverage
+*.lcov
+
+# logs
+logs
+logs/*
+_.log
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+.env.tunnel
+
+# caches
+.eslintcache
+.cache
+*.tsbuildinfo
+
+# IntelliJ based IDEs
+.idea
+
+# Finder (MacOS) folder config
+.DS_Store
+
+upload/*
+uploads/*
+uploads.zip
+temp_video_check
+temp_video_check/*
+
+db.sqlite
+db.sqlite-shm
+db.sqlite-wal
+
+web/*
